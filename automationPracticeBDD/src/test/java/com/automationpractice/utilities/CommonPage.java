@@ -8,11 +8,13 @@ import org.openqa.selenium.WebDriver;
  * @author TechCenture
  *
  */
-public class CommonPage {
+public class CommonPage extends DriverHelper{
+//public class CommonPage {
 
 	protected DriverHelper driverHelper;
 
 	protected CommonPage(WebDriver driver) {
+		super(driver);
 		if (driverHelper == null)
 			driverHelper = new DriverHelper(driver);
 	}
