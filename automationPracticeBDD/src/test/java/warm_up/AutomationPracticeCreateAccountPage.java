@@ -15,6 +15,7 @@ public class AutomationPracticeCreateAccountPage extends CommonPage {
 	
 	private int timeOutInSeconds = 10;
 	private DriverHelper driverHelper = getDriverHelper();
+	private WebDriver driver;
 	
 	private static AutomationPracticeCreateAccountPage automationPracticeCreateAccountPage;
 	
@@ -27,6 +28,7 @@ public class AutomationPracticeCreateAccountPage extends CommonPage {
 
 	protected AutomationPracticeCreateAccountPage(WebDriver driver) {
 		super(driver);
+		this.driver = driver;
 		
 	}
 	
@@ -169,7 +171,7 @@ public class AutomationPracticeCreateAccountPage extends CommonPage {
 	public void pickOnDay() {
 		 //driverHelper.getElement(pickDay, timeOutInSeconds);
 		 Select select = new
-	    Select(driver.getElement(pickDay, timeOutInSeconds)); 
+	    Select(driverHelper.getElement(pickDay, timeOutInSeconds)); 
 		 select.selectByValue("11");
 }
 	public String validateFName() {
